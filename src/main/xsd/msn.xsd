@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Log" type="LogType"/>
+  <xs:complexType name="UserType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="FriendlyName" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FromType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ToType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TextType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Style" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="MessageType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" minOccurs="0"/>
+      <xs:element type="FromType" name="From" minOccurs="0"/>
+      <xs:element name="Application" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sharing media"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="File" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C:\Users\Rich\Desktop\B0093A_Maths_Assignment_algebra_and_graphs.pdf"/>
+            <xs:enumeration value="F:\College Work\Maths\Assignment 2\Algebra and Graphs Assignment.docx"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ToType" name="To" minOccurs="0"/>
+      <xs:element type="TextType" name="Text"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Date" use="optional"/>
+    <xs:attribute type="xs:string" name="Time" use="optional"/>
+    <xs:attribute type="xs:string" name="DateTime" use="optional"/>
+    <xs:attribute type="xs:string" name="SessionID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="LeaveType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" minOccurs="0"/>
+      <xs:element type="FromType" name="From" minOccurs="0"/>
+      <xs:element name="Application" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sharing media"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="File" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C:\Users\Rich\Desktop\B0093A_Maths_Assignment_algebra_and_graphs.pdf"/>
+            <xs:enumeration value="F:\College Work\Maths\Assignment 2\Algebra and Graphs Assignment.docx"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ToType" name="To" minOccurs="0"/>
+      <xs:element type="TextType" name="Text"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Date" use="optional"/>
+    <xs:attribute type="xs:string" name="Time" use="optional"/>
+    <xs:attribute type="xs:string" name="DateTime" use="optional"/>
+    <xs:attribute type="xs:string" name="SessionID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="JoinType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" minOccurs="0"/>
+      <xs:element type="FromType" name="From" minOccurs="0"/>
+      <xs:element name="Application" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sharing media"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="File" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C:\Users\Rich\Desktop\B0093A_Maths_Assignment_algebra_and_graphs.pdf"/>
+            <xs:enumeration value="F:\College Work\Maths\Assignment 2\Algebra and Graphs Assignment.docx"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ToType" name="To" minOccurs="0"/>
+      <xs:element type="TextType" name="Text"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Date" use="optional"/>
+    <xs:attribute type="xs:string" name="Time" use="optional"/>
+    <xs:attribute type="xs:string" name="DateTime" use="optional"/>
+    <xs:attribute type="xs:string" name="SessionID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="InvitationResponseType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" minOccurs="0"/>
+      <xs:element type="FromType" name="From" minOccurs="0"/>
+      <xs:element name="Application" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value=""/>
+            <xs:enumeration value="sharing media"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="File" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C:\Users\Rich\Desktop\B0093A_Maths_Assignment_algebra_and_graphs.pdf"/>
+            <xs:enumeration value="F:\College Work\Maths\Assignment 2\Algebra and Graphs Assignment.docx"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ToType" name="To" minOccurs="0"/>
+      <xs:element name="Text">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:string" name="Style" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Date" use="optional"/>
+    <xs:attribute type="xs:string" name="Time" use="optional"/>
+    <xs:attribute type="xs:string" name="DateTime" use="optional"/>
+    <xs:attribute type="xs:string" name="SessionID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="InvitationType">
+    <xs:sequence>
+      <xs:element type="UserType" name="User" minOccurs="0"/>
+      <xs:element type="FromType" name="From" minOccurs="0"/>
+      <xs:element name="Application" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="sharing media"/>
+            <xs:enumeration value=""/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="File" minOccurs="0">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C:\Users\Rich\Desktop\B0093A_Maths_Assignment_algebra_and_graphs.pdf"/>
+            <xs:enumeration value="F:\College Work\Maths\Assignment 2\Algebra and Graphs Assignment.docx"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ToType" name="To" minOccurs="0"/>
+      <xs:element type="TextType" name="Text"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Date" use="optional"/>
+    <xs:attribute type="xs:string" name="Time" use="optional"/>
+    <xs:attribute type="xs:string" name="DateTime" use="optional"/>
+    <xs:attribute type="xs:string" name="SessionID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="LogType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="MessageType" name="Message" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="LeaveType" name="Leave"/>
+      <xs:element type="JoinType" name="Join"/>
+      <xs:element type="InvitationResponseType" name="InvitationResponse"/>
+      <xs:element type="InvitationType" name="Invitation"/>
+    </xs:choice>
+    <xs:attribute type="xs:string" name="FirstSessionID"/>
+    <xs:attribute type="xs:string" name="LastSessionID"/>
+  </xs:complexType>
+</xs:schema>
