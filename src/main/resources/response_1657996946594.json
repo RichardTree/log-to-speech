@@ -1,0 +1,68 @@
+{
+  "fileName": {
+    "value": "fuckit.txt"
+  },
+  "origin": "XML",
+  "fileId": {
+    "value": "43a0cee5-e017-4efd-8c95-58962b345229"
+  },
+  "messages": [
+    {
+      "sender": {
+        "value": "Rich"
+      },
+      "recipients": [
+        {
+          "value": "John"
+        },
+        {
+          "value": "Tom"
+        }
+      ],
+      "text": {
+        "value": "Test"
+      },
+      "timeStamp": {
+        "value": "2022-07-16T20:48:02.5368511"
+      }
+    },
+    {
+      "sender": {
+        "value": "Rich"
+      },
+      "recipients": [
+        {
+          "value": "John"
+        },
+        {
+          "value": "Tom"
+        }
+      ],
+      "text": {
+        "value": "Test"
+      },
+      "timeStamp": {
+        "value": "2022-07-16T20:48:02.5368511"
+      }
+    },
+    {
+      "sender": {
+        "value": "Rich"
+      },
+      "recipients": [
+        {
+          "value": "John"
+        },
+        {
+          "value": "Tom"
+        }
+      ],
+      "text": {
+        "value": "Test"
+      },
+      "timeStamp": {
+        "value": "2022-07-16T20:48:02.5368511"
+      }
+    }
+  ]
+}

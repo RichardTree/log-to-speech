@@ -1,13 +1,12 @@
+/* (C)2022 */
 package com.rickyt.logtospeech;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LogToSpeechApplicationTests {
+class LogToSpeechApplicationTestsParser {
 
-    @Test
-    void contextLoads() {
-    }
-
+  @Test
+  void contextLoads() {}
 }
