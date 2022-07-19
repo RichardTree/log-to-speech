@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 class XmlParserTest {
 
-  public static final String FILE_NAME = "charlestan883329723576.xml";
+  public static final String FILE_NAME = "test-msn-log.xml";
 
   @Test
   public void shouldParseXmlToFile() throws IOException {

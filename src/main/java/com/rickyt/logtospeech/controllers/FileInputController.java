@@ -42,7 +42,7 @@ public class FileInputController {
   }
 
   @RequestMapping(path = "/domainJsonExample", method = GET)
-  ResponseEntity<File> domainJsonExample() {
+  public ResponseEntity<File> domainJsonExample() {
     return ResponseEntity.ok(generateDomainJsonExample());
   }
 
@@ -64,7 +64,7 @@ public class FileInputController {
   }
 
   @RequestMapping(path = "/lol", method = GET)
-  ResponseEntity<File> kek() throws IOException {
+  public ResponseEntity<File> kek() throws IOException {
 
     final var mapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
 
@@ -78,11 +78,11 @@ public class FileInputController {
   }
 
   @RequestMapping(
-      path = "/fileUpload",
-      name = "FileUpload",
+      path = "/fileUpload/xml",
+      name = "XML FileUpload",
       method = POST,
       consumes = {"multipart/form-data"})
-  ResponseEntity<byte[]> fileUpload(@RequestPart() MultipartFile inputFile) {
+  public ResponseEntity<byte[]> fileUploadXml(@RequestPart() MultipartFile inputFile) {
 
     return extractFileAndFileName(inputFile)
         .peek(this::logFileReceived)
@@ -92,6 +92,16 @@ public class FileInputController {
         .flatMap(speechParser::parse)
         .map(ResponseEntity::ok)
         .getOrElseGet(this::handleError);
+  }
+
+  @RequestMapping(
+      path = "/fileUpload/jsonValidator",
+      name = "JSON Validator",
+      method = POST,
+      consumes = {"application/json"})
+  public ResponseEntity<byte[]> jsonValidator(@RequestBody File file) {
+
+    return ResponseEntity.ok().build();
   }
 
   private void logFileReceived(

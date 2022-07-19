@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.*;
 
 import com.rickyt.logtospeech.domain.File;
 import com.rickyt.logtospeech.domain.ImmutableFileName;
+import com.rickyt.logtospeech.domain.ImmutableMessage;
+import com.rickyt.logtospeech.domain.Message;
 import generated.*;
 import io.vavr.control.Try;
 import jakarta.xml.bind.JAXBContext;
@@ -25,7 +27,7 @@ class JaxbToCoreMapperTest {
 
     byte[] bytes =
         Objects.requireNonNull(
-                getClass().getClassLoader().getResourceAsStream("charlestan883329723576.xml"))
+                getClass().getClassLoader().getResourceAsStream("test-msn-log.xml"))
             .readAllBytes();
 
     InputStream inputStream = new ByteArrayInputStream(bytes);
@@ -36,9 +38,9 @@ class JaxbToCoreMapperTest {
             .mapTry(unmarshaller -> mapToJaxB(inputStream, unmarshaller))
             .getOrElseThrow(() -> new IllegalStateException("Couldnt parse xml to jaxb"));
 
-    File file = jaxbToCoreMapper.map(logType, ImmutableFileName.of("charlestan883329723576.xml"));
+    File file = jaxbToCoreMapper.map(logType, ImmutableFileName.of("test-msn-log.xml"));
 
-    assertThat(file.messages()).hasSize(8276);
+    assertThat(file.messages()).hasSize(3);
   }
 
   private LogType mapToJaxB(InputStream inputStream, Unmarshaller unmarshaller)
