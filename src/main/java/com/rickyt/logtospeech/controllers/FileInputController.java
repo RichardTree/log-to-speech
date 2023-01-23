@@ -63,20 +63,6 @@ public class FileInputController {
         .build();
   }
 
-  @RequestMapping(path = "/lol", method = GET)
-  public ResponseEntity<File> kek() throws IOException {
-
-    final var mapper = JsonMapper.builder().addModule(new JavaTimeModule()).build();
-
-    final var inputStream =
-        requireNonNull(
-            getClass().getClassLoader().getResourceAsStream("response_1657996946594.json"));
-
-    final var file = mapper.readValue(inputStream, File.class);
-
-    return ResponseEntity.ok(file);
-  }
-
   @RequestMapping(
       path = "/fileUpload/xml",
       name = "XML FileUpload",
